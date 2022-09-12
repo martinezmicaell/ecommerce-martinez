@@ -1,0 +1,30 @@
+.main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+h1 {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+    color: black;
+}
+
+span {
+    color: black
+}
+
+.section__container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.section__article {
+    border: 3px inset rgba(237, 207, 167, .7);
+    width: 300px;
+}

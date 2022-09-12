@@ -1,0 +1,31 @@
+//Variables
+$beige: rgb(237, 207, 167);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: rgba(222,222,222, .9);
+    height: 2000px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    backdrop-filter: blur(3px); /* Chrome and Opera */
+    scroll-behavior: smooth;
+    color: rgb(237, 207, 167);
+    // font-family: 'Raleway';
+    background-color: #FFFFFF;
+
+
+}
