@@ -1,0 +1,42 @@
+.count__price {
+    margin-top: 10px
+}
+.count__container {
+    margin: 10px;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    border-radius: 5px;
+    border: 3px solid var(--beige);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    button {
+        width: 50px;
+        font-size: 30px;
+        color: var(--beige);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.count__cantity {
+    color: black
+}
+
+.button__addToCart {
+    padding: 15px;
+    font-size: 1.3rem;
+    width: 100%;
+    color: var(--beige);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        color: rgba(0,0,0, .1);
+        text-shadow: 0 0 7px var(--beige);
+    }
+}

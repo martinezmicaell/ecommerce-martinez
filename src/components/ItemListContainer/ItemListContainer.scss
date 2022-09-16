@@ -18,6 +18,9 @@ span {
 .section__container {
     display: flex;
     justify-content: space-around;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
@@ -25,6 +28,13 @@ span {
 }
 
 .section__article {
-    border: 3px inset rgba(237, 207, 167, .7);
+    // border: 3px inset rgba(237, 207, 167, .7);
     width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    backdrop-filter: blur(16px);
+    box-shadow: 5px 0 50px rgba(237, 207, 167, .9);
+
 }

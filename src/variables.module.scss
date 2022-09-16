@@ -1,5 +1,5 @@
-$beige: rgb(237, 207, 167);
-
-:export {
-    primaryColor: $beige
+:root {
+    --beige: rgb(237, 207, 167);
+    --beigeHex: #edcfa7;
+    --color-additional: #FFCE00;
 }
