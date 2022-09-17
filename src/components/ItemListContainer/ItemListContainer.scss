@@ -1,6 +1,15 @@
 .main {
     width: 90%;
     margin: 0 auto;
+
+    &__title {
+        width: 100%;
+        text-align: center;
+        background: -webkit-linear-gradient(75deg, var(--beige), rgb(145, 145, 130));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        // text-shadow: 0 0 5px grey;
+    }
 }
 
 
