@@ -26,6 +26,7 @@ const ItemListContainer = ({greetings}) => {
 
   return (
     <main className='main'>
+
         <h1 className='main__title'>{greetings}</h1>
 
         <section className='section__container'>

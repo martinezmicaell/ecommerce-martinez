@@ -1,7 +1,12 @@
-import {useState} from 'react'
+import React,{useState} from 'react'
 
 //styles
 import './ItemCount.scss'
+
+//packages
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const ItemCount = ({price, stock, initial}) => {
     const [count, setCount] = useState(initial);
 
@@ -16,6 +21,26 @@ const ItemCount = ({price, stock, initial}) => {
             setCount(count + 1)
         }
     }
+
+    const notify = () => toast.success("Wow so easy!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    })
+
+
+    const handleCart = () => {
+        notify();
+        console.log('cart 1')
+    }
+
+    // const handleCart = () => {
+    //     console.log('hello world')
+    // }
 
     if(stock === 0) {
         const buttons = [...document.getElementsByTagName('button')];
@@ -33,7 +58,11 @@ const ItemCount = ({price, stock, initial}) => {
                 <button className='count__add' onClick={handleAdd}>+</button>
             </div>
 
-            <button className='button__addToCart'>Agregar al carrito</button>
+            <div>
+                <button className='button__addToCart' onClick={handleCart}>Agregar al carrito</button>
+
+            </div>
+
         </>
     )
 }
