@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link, NavLink } from 'react-router-dom'
 //components
 import CartWidget from './CartWidget/CartWidget'
 //styles
@@ -10,15 +10,15 @@ const Navbar = () => {
         <header className='header'>
             <div>
                 <div className='logo' href='/'>
-                    <span className='logo__subrayado'>MARBIS</span>
+                    <Link to='/'><span className='logo__subrayado'>MARBIS</span></Link>
                 </div>
             </div>
 
             <ul className='header__list'>
-                <li className='header__li'><a href="/">Inicio</a></li>
-                <li className='header__li'><a href="/">Productos</a></li>
-                <li className='header__li'><a href="/">Ofertas</a></li>
-                <li className='header__li'><a href="/">Contacto</a></li>
+                <li className='header__li'><Link to="/">Inicio</Link></li>
+                <li className='header__li'><Link to='/'>Productos</Link></li>
+                <li className='header__li'><Link to='/ofertas'>Ofertas</Link></li>
+                <li className='header__li'><Link to='/contacto'>Contacto</Link></li>
             </ul>
 
             <CartWidget/>
