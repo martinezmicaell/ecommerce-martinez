@@ -219,7 +219,7 @@ const data = [{
     "img": "http://dummyimage.com/300x400.png/5fa2dd/ffffff"
 }]
 
-const getItems = new Promise((resolve, reject) => {
+export const getItems = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(data)
         reject('Error al traer los items')
@@ -227,7 +227,15 @@ const getItems = new Promise((resolve, reject) => {
 
 })
 
+export const getSingleItem = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(data[2])
+            reject('Error al traer los items')
+        }, 2000)
+    })
+}
 
 // getItems.then(res => console.log(res))
 
-export default getItems;
+// export default getItems;

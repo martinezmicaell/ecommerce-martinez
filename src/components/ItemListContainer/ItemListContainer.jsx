@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 //components
 import CardList from './CardList/CardList';
-import getItems from '../../services/mockAPI';
+import {getItems} from '../../services/mockAPI';
 
 //styles
 import './ItemListContainer.scss'
