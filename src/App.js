@@ -8,7 +8,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import NotFound from './components/NotFound/NotFound';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 
 //packages
 import { ToastContainer } from 'react-toastify';
@@ -24,9 +24,9 @@ function App() {
 
                 <Routes>
                     <Route path="/" element={<ItemListContainer greetings="Bienvenidos a mi Tienda online!" />} />
-
+                    <Route path="/category/:categoryId" element={<ItemListContainer />} />
+                    <Route path="/item/:id" element={<ItemDetailContainer />} />
                     <Route path='/detail' element={<ItemDetailContainer />} />
-
                     <Route path='*' element={<NotFound />}></Route>
                 </Routes>
             </BrowserRouter>

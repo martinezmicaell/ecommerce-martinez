@@ -1,7 +1,7 @@
 import React from 'react';
 
 //components
-import ItemCount from './ItemCount/ItemCount';
+import ButtonShowMore from '../../../ButtonShowMore/ButtonShowMore';
 
 //styles
 import './Card.scss'
@@ -18,10 +18,10 @@ const Card = (props) => {
                 <div className="article__description">
                     <h2 className='article__title'>{title}</h2>
                     {/* <p>{detail}</p> */}
+                    <p className='article__price'>${price}</p>
                 </div>
 
-                <ItemCount price={price} stock={stock} initial={initial}/>
-
+                <ButtonShowMore id={id}></ButtonShowMore>
             </div>
         </article>
   )

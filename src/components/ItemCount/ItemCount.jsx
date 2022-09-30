@@ -1,35 +1,72 @@
-import React, {useState} from 'react'
+import React,{useState} from 'react'
 
-const ItemCount = (props) => {
-    const {stock, initial} = props;
+//styles
+import './ItemCount.scss'
 
+//packages
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const ItemCount = ({price, stock, initial}) => {
     const [count, setCount] = useState(initial);
-    console.log("stock:", stock)
-
-    const handleAdd = () => {
-        if( count < stock) {
-        setCount(count + 1)
-        }
-        //Solo sumar si la cantidad del contador no supera la de stock
-    }
 
     const handleSubstract = () => {
         if(count > 1) {
             setCount(count - 1)
         }
     }
-  return (
-    <>
-        <div>
-            <button onClick={handleAdd}>+</button>
-            <span>{count}</span>
-            <button onClick={handleSubstract}>-</button>
+
+    const handleAdd = () => {
+        if(count < stock) {
+            setCount(count + 1)
+        }
+    }
+
+    const notify = () => toast.success("Wow so easy!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    })
+
+
+    const handleCart = () => {
+        notify();
+        console.log('cart 1')
+    }
+
+    // const handleCart = () => {
+    //     console.log('hello world')
+    // }
+
+    if(stock === 0) {
+        const buttons = [...document.getElementsByTagName('button')];
+        console.log(buttons)
+        buttons.forEach(button => button.disabled = true)
+    }
+
+    return (
+        <div className='count__wrapper'>
+
+            <div className='count__container'>
+                <button className='count__substract' onClick={handleSubstract}>-</button>
+                <span className='count__cantity'>{count}</span>
+                <button className='count__add' onClick={handleAdd}>+</button>
+            </div>
+
+            <span className='count__price'>El precio por {count} {(count === 1) ? 'unidad' : 'unidades'} es de: ${price * count}</span>
+
+
+            <div>
+                <button className='button__addToCart' onClick={handleCart}>Agregar al carrito</button>
+
+            </div>
+
         </div>
-
-        <button>Agregar al carrito</button>
-
-    </>
-  )
+    )
 }
 
 export default ItemCount

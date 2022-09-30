@@ -1,0 +1,23 @@
+.buttonShowMore {
+    background-color: rgb(237, 207, 167);
+    color: white;
+    font-style: italic;
+    font-size: 1em;
+    font-weight: 600;
+    width: 110px;
+    padding: .4em .8em;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+    border: 2px inset rgba(255,255,255,.6);
+    margin-bottom: 20px;
+}
+
+.buttonShowMore:hover {
+    transform: scale(1.15);
+}
+
+.linkShowMore {
+    text-decoration: none;
+    color: white;
+}

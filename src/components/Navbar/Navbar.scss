@@ -14,7 +14,6 @@
     // filter: blur(2px);
     & a {
         text-decoration: none;
-        color: rgb(237, 207, 167);
     }
 
 
@@ -30,15 +29,7 @@
     &__li {
         cursor: pointer;
         padding: 0 10px;
-        &::after {
-            content: '';
-            height: 2px;
-            top: 0px;
-            left: 0px;
-            width: 100px;
-            border-bottom: 2px solid primaryColor;
-
-        }
+        color: rgb(237, 207, 167);
     }
 }
 
@@ -56,4 +47,13 @@
         border-bottom: 2px solid white;
 
     }
+}
+
+.active__link {
+    background-color: rgb(237, 207, 167);
+    color: white;
+    font-style: italic;
+    padding: .4em .8em;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }

@@ -1,8 +1,9 @@
 import {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
+
 //components
 import CardList from './CardList/CardList';
-import {getItems} from '../../services/mockAPI';
-
+import {getItems, getItemsByCategory} from '../../services/mockAPI';
 //styles
 import './ItemListContainer.scss'
 
@@ -10,19 +11,31 @@ const ItemListContainer = ({greetings}) => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    // console.log(useParams())
+    const { categoryId } = useParams();
+    console.log(categoryId)
+
     useEffect(() => {
-        getItems
-            .then((response) => {
-                console.log('Trayendo Datos');
+        if(categoryId === undefined) {
+            getItems
+                .then((response) => {
+                    console.log('Trayendo Datos');
+                    setItems(response)
+                    setIsLoading(false);
+                    console.log(response)
+
+                })
+                .catch(err => console.log(`${err}` ))
+                .finally(() => console.log('Request finalized'))
+        } else {
+            getItemsByCategory(categoryId).then(response => {
                 setItems(response)
                 setIsLoading(false);
-                console.log(response)
 
             })
-            .catch(err => console.log(`${err}` ))
-            .finally(() => console.log('Request finalized'))
+        }
 
-    }, [])
+    }, [categoryId])
 
   return (
     <main className='main'>

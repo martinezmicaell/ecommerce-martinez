@@ -6,6 +6,7 @@ import CartWidget from './CartWidget/CartWidget'
 import './Navbar.scss'
 
 const Navbar = () => {
+
     return (
         <header className='header'>
             <div>
@@ -15,13 +16,17 @@ const Navbar = () => {
             </div>
 
             <ul className='header__list'>
-                <li className='header__li'><Link to="/">Inicio</Link></li>
-                <li className='header__li'><Link to='/'>Productos</Link></li>
-                <li className='header__li'><Link to='/ofertas'>Ofertas</Link></li>
-                <li className='header__li'><Link to='/contacto'>Contacto</Link></li>
+                <li className='header__li'><NavLink to="/" end className={({ isActive }) => (isActive ? 'active__link' : 'header__li')}
+                >Inicio</NavLink></li>
+                <li className='header__li'><NavLink to="/category/prendas" className={({ isActive }) => (isActive ? 'active__link' : 'header__li')}
+                >Prendas</NavLink></li>
+                <li className='header__li'><NavLink to="/category/zapatos" className={({ isActive }) => (isActive ? 'active__link' : 'header__li')}
+                >Zapatos</NavLink></li>
+                <li className='header__li'><NavLink to="/contacto" className={({ isActive }) => (isActive ? 'active__link' : 'header__li')}
+                >Contacto</NavLink></li>
             </ul>
 
-            <CartWidget/>
+            <CartWidget />
         </header>
     )
 }
