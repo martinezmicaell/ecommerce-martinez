@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
 }
 
 .count__price {
-    margin-top: 10px;
+    margin-top: 20px;
     color: var(--beige);
+
 }
 .count__container {
     margin: 10px auto;
@@ -17,7 +19,9 @@
     height: 60px;
     border-radius: 5px;
     border: 3px solid var(--beige);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Courier;
+
+
 
     button {
         width: 50px;
@@ -30,7 +34,16 @@
 }
 
 .count__cantity {
-    color: black
+    color: rgba(177, 177, 177, 0.7);
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+
+}
+
+.count__stockAvailable {
+    margin-top: 10px;
+    color: var(--beige);
+    font-style: italic;
+    font-size: .85em;
 }
 
 .button__addToCart {
@@ -47,8 +60,8 @@
     border: none;
     cursor: pointer;
 
-    // &:hover {
-    //     color: rgba(0,0,0, .1);
-    //     text-shadow: 0 0 7px var(--beige);
-    // }
+    &:hover {
+        box-shadow: 2px 2px 15px var(--beige);
+        // text-shadow: 0 0 7px var(--beige);
+    }
 }

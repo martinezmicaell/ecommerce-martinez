@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 //components
 import CardList from './CardList/CardList';
 import {getItems, getItemsByCategory} from '../../services/mockAPI';
+import Spinner from '../Spinner/Spinner';
+
 //styles
 import './ItemListContainer.scss'
 
@@ -16,6 +18,7 @@ const ItemListContainer = ({greetings}) => {
     console.log(categoryId)
 
     useEffect(() => {
+        console.log(categoryId)
         if(categoryId === undefined) {
             getItems
                 .then((response) => {
@@ -43,8 +46,8 @@ const ItemListContainer = ({greetings}) => {
         <h1 className='main__title'>{greetings}</h1>
 
         <section className='section__container'>
-            {isLoading && 'Cargando ...'}
-            <CardList items={items} />
+            {isLoading ? <Spinner /> : <CardList items={items} />}
+
         </section>
     </main>
   )

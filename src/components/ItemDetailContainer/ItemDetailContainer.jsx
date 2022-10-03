@@ -5,6 +5,9 @@ import { getSingleItem } from '../../services/mockAPI'
 
 //components
 import ItemDetail from './ItemDetail/ItemDetail'
+//spinner
+import Spinner from '../Spinner/Spinner'
+
 
 
 const ItemDetailContainer = () => {
@@ -23,7 +26,7 @@ const ItemDetailContainer = () => {
 
         <>
 
-            {isLoading ? <p style={{textAlign: "center", marginTop: 15}}>Cargando...</p> : <ItemDetail data={data} />}
+            {isLoading ? <Spinner /> : <ItemDetail data={data} />}
         </>
     )
 }

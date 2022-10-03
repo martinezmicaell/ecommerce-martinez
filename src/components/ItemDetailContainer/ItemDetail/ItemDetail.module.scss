@@ -40,14 +40,40 @@
     text-shadow: 0px 0px 10px rgba(177, 177, 177, .7);
 }
 
+.button__goToCart {
+    margin: 0 auto;
+    padding: .4em .8em;
+    border-top-left-radius: 8px;
+    color: rgb(237, 207, 167);
+    font-style: italic;
+    font-weight: 600;
+    border-bottom-right-radius: 8px;
+    font-size: 1.1rem;
+    width: 250px;
+    background-color: transparent;
+    border: 2px solid rgb(237, 207, 167);
+    cursor: pointer;
 
+    &:hover {
+        color: white;
+        animation: transitionColorButton .7s forwards;
+
+    }
+}
+
+@keyframes transitionColorButton {
+    100% {
+        background-color: rgb(237, 207, 167);
+    }
+
+}
 //= MEDIA QUERIES
 
 @media (min-width: 1024px) {
     .section__article {
         display: flex;
-        justify-content: start;
-        align-items: start;
+        justify-content: flex-start;
+        align-items: flex-start;
         // margin-top: -40px;
         width: 80%;
         max-width: 1050px;
@@ -59,8 +85,8 @@
         width: 100%;
         // height: 100%;
         flex-direction: row;
-        justify-content: start;
-        align-items: start;
+        justify-content: flex-start;
+        align-items: flex-start;
         gap: 20px;
 
     }
@@ -90,4 +116,35 @@
 
     }
 
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.linkFollowingBuy {
+    margin-top: 10px;
+    text-decoration: underline;
+    font-style: italic;
+    color: rgb(237, 207, 167);
+    letter-spacing: .6px;
+    font-size: 1.1rem;
+
+    &:hover {
+        text-shadow: 0px 0px 10px rgba(177, 177, 177, .7);
+    }
+}
+
+.goToCartSpan {
+    margin-top: 10px;
+    color: rgb(237, 207, 167);
+}
+
+
+.wrapper__goToCart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

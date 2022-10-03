@@ -7,7 +7,7 @@ import './ItemCount.scss'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ItemCount = ({price, stock, initial}) => {
+const ItemCount = ({price, stock, initial, onAddToCart}) => {
     const [count, setCount] = useState(initial);
 
     const handleSubstract = () => {
@@ -19,6 +19,7 @@ const ItemCount = ({price, stock, initial}) => {
     const handleAdd = () => {
         if(count < stock) {
             setCount(count + 1)
+
         }
     }
 
@@ -33,10 +34,10 @@ const ItemCount = ({price, stock, initial}) => {
     })
 
 
-    const handleCart = () => {
-        notify();
-        console.log('cart 1')
-    }
+    // const onAddToCart = () => {
+    //     notify();
+    //     console.log('cart 1')
+    // }
 
     // const handleCart = () => {
     //     console.log('hello world')
@@ -57,12 +58,12 @@ const ItemCount = ({price, stock, initial}) => {
                 <button className='count__add' onClick={handleAdd}>+</button>
             </div>
 
+            <span className='count__stockAvailable'>{`(${stock} unidades disponibles)`}</span>
             <span className='count__price'>El precio por {count} {(count === 1) ? 'unidad' : 'unidades'} es de: ${price * count}</span>
 
 
             <div>
-                <button className='button__addToCart' onClick={handleCart}>Agregar al carrito</button>
-
+                <button className='button__addToCart' onClick={() => onAddToCart(count)}>Agregar al carrito</button>
             </div>
 
         </div>
