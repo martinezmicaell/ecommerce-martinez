@@ -19,17 +19,20 @@ const ItemListContainer = ({greetings}) => {
 
     useEffect(() => {
         console.log(categoryId)
+        setIsLoading(true)
         if(categoryId === undefined) {
             getItems
                 .then((response) => {
                     console.log('Trayendo Datos');
                     setItems(response)
-                    setIsLoading(false);
                     console.log(response)
 
                 })
                 .catch(err => console.log(`${err}` ))
-                .finally(() => console.log('Request finalized'))
+                .finally(() => {
+                    setIsLoading(false);
+                    console.log('Request finalized')
+                })
         } else {
             getItemsByCategory(categoryId).then(response => {
                 setItems(response)

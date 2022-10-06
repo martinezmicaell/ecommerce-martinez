@@ -15,10 +15,10 @@ const MyProvider = ({children}) => {
     }
 
 
-    const addItem = (item, count) => {
+    const addItem = (item, quantity) => {
         const newItem = {
             ...item,
-            count
+            quantity
         }
 
         //Si esta en carrito, solo agregamos cantidad.
@@ -26,7 +26,7 @@ const MyProvider = ({children}) => {
             const findProduct = cart.find(x => x.id === newItem.id)
             const productIndex = cart.indexOf(findProduct)
             const auxArray = [...cart]
-            auxArray[productIndex].count += count
+            auxArray[productIndex].quantity += quantity
             setCart(auxArray)
         } else {
             setCart([...cart, newItem])
@@ -45,11 +45,11 @@ const MyProvider = ({children}) => {
 
     //retorna cantidad unidades que tiene nuestro carrito. Differente al length que retorna cantidad de elementos. 0 es el valor inicial de la acumulacion
     const getItemCantity = () => {
-        return cart.reduce((acc, x) => acc += x.count, 0)
+        return cart.reduce((acc, x) => acc += x.quantity, 0)
     }
 
     const getItemPrice = () => {
-        return cart.reduce((acc, x) => acc += x.price * x.count, 0)
+        return cart.reduce((acc, x) => acc += x.price * x.quantity, 0)
     }
 
     return <Provider value={{cart, isInCart, addItem, emptyCart, deleteItem, getItemCantity, getItemPrice}}>{children}</Provider>

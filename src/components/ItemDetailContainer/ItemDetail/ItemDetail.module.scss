@@ -83,26 +83,38 @@
     .article__wrapper {
         // background-color: red;
         width: 100%;
-        // height: 100%;
+        height: 100%;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
         gap: 20px;
+        overflow-y: scroll;
 
+    }
+
+    .wrapper__img {
+        align-self: center;
     }
 
     .article__img {
         max-height: 80%;
         // max-height: ;
+        align-self: center;
     }
 
-    .article__description {
-        align-self: center;
+    .article__wrapperDescription {
         width: 1500px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 50px;
+        height: 100%;
+        // background-color: brown;
+
+    }
+
+    .article__description {
+        height: 100%;
     }
 
     .article__detail {

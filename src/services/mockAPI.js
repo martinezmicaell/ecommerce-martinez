@@ -203,7 +203,7 @@ export const getSingleItem = (id) => {
         setTimeout(() => {
             let itemFind = data.find(item => item.id === parseInt(id))
             if (itemFind) resolve(itemFind)
-            reject('Error al traer los items')
+            reject(new Error("Ups.. No encontramos el item :("))
         }, 1500)
     })
 }

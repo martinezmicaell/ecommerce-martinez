@@ -10,7 +10,7 @@ import ItemCount from '../../ItemCount/ItemCount';
 //styles
 import styles from './ItemDetail.module.scss'
 
-const ItemDetail = ({data: {id, title, price, detail, img, stock}}) => {
+const ItemDetail = ({data, data: {id, title, price, detail, img, stock}}) => {
     const [count, setCount] = useState(1);
     const [inCart, setInCart] = useState(false);
 
@@ -21,7 +21,8 @@ const ItemDetail = ({data: {id, title, price, detail, img, stock}}) => {
     // }
 
     const handleAddToCart = (count) => {
-        alert(`Agregaste al carrito: ${count}`)
+        alert(`Agregaste al carrito: ${count}, \n ${data}`)
+        addItem(data, count)
         //     addItem(detalle, count)
         setInCart(inCart => !inCart)
     }
@@ -44,14 +45,14 @@ const ItemDetail = ({data: {id, title, price, detail, img, stock}}) => {
                     <img className={styles.article__img} src={img} alt="" />
                 </figure>
 
+                <div className={styles.article__wrapperDescription}>
                     <div className={styles.article__description}>
                         <h2 className={styles.article__title}>{title}</h2>
                         <p className={styles.article__detail}>{detail}</p>
 
-                    {!inCart ? <ItemCount price={price} stock={stock} initial={1} onAddToCart={handleAddToCart}/> : <GoToCart />}
-
-
+                        {!inCart ? <ItemCount price={price} stock={stock} initial={1} onAddToCart={handleAddToCart}/> : <GoToCart />}
                     </div>
+                </div>
             </div>
         </article>
     )

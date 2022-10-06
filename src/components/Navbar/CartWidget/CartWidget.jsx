@@ -2,6 +2,8 @@ import React from 'react'
 import { useContext } from 'react';
 import { CartContext } from '../../../context/CartContext';
 
+import { Link } from 'react-router-dom';
+
 //component
 import {RiShoppingCartLine} from 'react-icons/ri';
 
@@ -15,7 +17,13 @@ const CartWidget = () => {
     const {getItemCantity} = useContext(CartContext)
 
     return (
-        <RiShoppingCartLine className='cart' size={25}/>
+        <div className='cart__wrapperIcon'>
+            <Link className='cart__link' to="/cart">
+                <i className='cart__count'>{getItemCantity() > 0 && getItemCantity()}</i>
+                <RiShoppingCartLine className='cart__icon' size={25}/>
+            </Link>
+
+        </div>
     )
 }
 
