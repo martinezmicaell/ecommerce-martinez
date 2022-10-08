@@ -16,10 +16,6 @@ const ItemDetail = ({data, data: {id, title, price, detail, img, stock}}) => {
 
     const { addItem } = useContext(CartContext);
 
-    // const onAdd = () => {
-    //     addItem(detalle, count)
-    // }
-
     const handleAddToCart = (count) => {
         alert(`Agregaste al carrito: ${count}, \n ${data}`)
         addItem(data, count)

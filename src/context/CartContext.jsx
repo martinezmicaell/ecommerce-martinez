@@ -43,6 +43,25 @@ const MyProvider = ({children}) => {
         return setCart(cart.filter(x => x.id !== id))
     }
 
+    //Cambiar en tiempo real el carrito Total al restar la qantity
+    const substractCartItem = (item, quantity) => {
+        const findProduct = cart.find(x => x.id === item.id);
+        const productIndex = cart.indexOf(findProduct);
+        const auxArray = [...cart]
+        auxArray[productIndex].quantity = quantity
+        setCart(auxArray)
+
+    }
+
+//Cambiar en tiempo real el carrito Total al sumar la qantity
+    const addCartItem = (item, quantity) => {
+        const findProduct = cart.find(x => x.id === item.id);
+        const productIndex = cart.indexOf(findProduct);
+        const auxArray = [...cart]
+        auxArray[productIndex].quantity = quantity
+        setCart(auxArray)
+    }
+
     //retorna cantidad unidades que tiene nuestro carrito. Differente al length que retorna cantidad de elementos. 0 es el valor inicial de la acumulacion
     const getItemCantity = () => {
         return cart.reduce((acc, x) => acc += x.quantity, 0)
@@ -52,7 +71,7 @@ const MyProvider = ({children}) => {
         return cart.reduce((acc, x) => acc += x.price * x.quantity, 0)
     }
 
-    return <Provider value={{cart, isInCart, addItem, emptyCart, deleteItem, getItemCantity, getItemPrice}}>{children}</Provider>
+    return <Provider value={{cart, isInCart, addItem, emptyCart, deleteItem, getItemCantity, getItemPrice, substractCartItem, addCartItem}}>{children}</Provider>
 }
 
 //a value se le pasa un objeto, si no tendriamos que mandar todo de forma manual

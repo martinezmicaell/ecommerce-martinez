@@ -1,0 +1,148 @@
+.cart {
+    &__section {
+        // background-color: rgba(55,55,55, .5);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        // height: 100vh;
+    }
+
+    &__title {
+        padding: 20px;
+        text-align: center;
+        font-size: 2rem;
+        font-style: italic;
+    }
+
+    &__calculation {
+        border-top: 2px solid rgba(33,33,33, .9);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 40px 20px;
+        font-size: 17px;
+
+    }
+
+    &__totals {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__total {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
+        // font-size: 18px;
+        font-family: "Courier";
+
+
+
+        &Number {
+            font-family: "Courier";
+        }
+    }
+
+}
+
+.goToBuy {
+    text-decoration: none;
+    // font-size: 18px;
+    font-style: italic;
+    background-color: var(--beige);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    &__container {
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+.link__finishBuy{
+    margin-top: 1.5em;
+    // background-color: black;
+    border: 2px solid rgba(33,33,33, .7);
+    text-align: center;
+    text-decoration: none;
+    font-family: "Futura";
+    letter-spacing: 3px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: .9em;
+    color: rgba(33,33,33, .7);
+
+    &:hover {
+
+        animation: transitionBackground .7s forwards;
+    }
+}
+
+.voidCart {
+    &__container {
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__h3 {
+        margin-top: 20px;
+    }
+
+    &__linkGoToBuy {
+        color: white;
+        text-decoration: none;
+        background-color: var(--beige);
+        padding: 10px 20px;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 767px) {
+    .cart {
+        &__calculation {
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 40px;
+        }
+
+        &__total {
+            font-size: 18px;
+        }
+    }
+
+    .link__finishBuy {
+        font-size: 1em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes transitionBackground {
+    0% {
+
+    }
+    100% {
+        background-color: rgba(33,33,33, .9);
+        color: var(--beige);
+    }
+
+}
+

@@ -1,8 +1,7 @@
 import React,{useState} from 'react'
 
 //styles
-import './ItemCount.scss'
-
+import './ItemCount.scss';
 //packages
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
