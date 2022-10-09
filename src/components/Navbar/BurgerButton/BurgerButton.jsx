@@ -1,18 +1,18 @@
 import React, {useState} from 'react'
-
+import { Link } from 'react-router-dom';
 import './BurgerButton.scss'
 
 
 const BurgerButton = () => {
     const [showMenu, setShowMenu] = useState(false);
 
+    const hamburger = document.querySelector('.menu-btn__burger');
+    const nav = document.querySelector('.nav');
+    const menuNav = document.querySelector('.menu-nav');
+    const navItems = document.querySelectorAll('.menu-nav__item');
+
 
     const handleBurgerButton = () => {
-        const hamburger = document.querySelector('.menu-btn__burger');
-        const nav = document.querySelector('.nav');
-        const menuNav = document.querySelector('.menu-nav');
-        const navItems = document.querySelectorAll('.menu-nav__item');
-
         if(!showMenu) {
             hamburger.classList.add('open');
             nav.classList.add('open');
@@ -28,8 +28,15 @@ const BurgerButton = () => {
 
             setShowMenu(false);
         }
+    }
 
+    const handleClickLi = () => {
+        hamburger.classList.remove('open');
+        nav.classList.remove('open');
+        menuNav.classList.remove('open');
+        navItems.forEach(item => item.classList.remove('open'));
 
+        setShowMenu(false);
     }
 
   return (
@@ -41,24 +48,24 @@ const BurgerButton = () => {
         <nav className="nav">
             <ul className="menu-nav">
                 <li className="menu-nav__item active">
-                    <a href="/" className="menu-nav__link">
+                    <Link to="/" className="menu-nav__link" onClick={handleClickLi}>
                         Inicio
-                    </a>
+                    </Link>
                 </li>
                 <li className="menu-nav__item">
-                    <a href="about.html" className="menu-nav__link">
+                    <Link to="/category/prendas" className="menu-nav__link" onClick={handleClickLi}>
                         Prendas
-                    </a>
+                    </Link>
                 </li>
                 <li className="menu-nav__item">
-                    <a href="projects.html" className="menu-nav__link">
+                    <Link to="/category/zapatos" className="menu-nav__link" onClick={handleClickLi}>
                         Zapatos
-                    </a>
+                    </Link>
                 </li>
                 <li className="menu-nav__item">
-                    <a href="contact.html" className="menu-nav__link">
+                    <Link to="/contacto" className="menu-nav__link" onClick={handleClickLi}>
                         ¿Quienes somos?
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </nav>

@@ -73,6 +73,7 @@
     z-index: 8;
 
 
+
     // &::after {
     //     content: '';
     //     position: absolute;
@@ -85,7 +86,9 @@
 
     &.open {
         visibility: visible;
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.8);
+         // This be the blur
     }
 
     .menu-nav {
@@ -95,7 +98,9 @@
         justify-content: center;
         height: 100vh;
         overflow: hidden;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(20px);
+
         list-style-type: none;
         padding-right: 1rem;
         transform: translateY(-100%);
