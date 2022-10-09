@@ -6,13 +6,13 @@ import './BurgerButton.scss'
 const BurgerButton = () => {
     const [showMenu, setShowMenu] = useState(false);
 
-    const hamburger = document.querySelector('.menu-btn__burger');
-    const nav = document.querySelector('.nav');
-    const menuNav = document.querySelector('.menu-nav');
-    const navItems = document.querySelectorAll('.menu-nav__item');
-
 
     const handleBurgerButton = () => {
+        const hamburger = document.querySelector('.menu-btn__burger');
+        const nav = document.querySelector('.nav');
+        const menuNav = document.querySelector('.menu-nav');
+        const navItems = document.querySelectorAll('.menu-nav__item');
+
         if(!showMenu) {
             hamburger.classList.add('open');
             nav.classList.add('open');
@@ -31,6 +31,12 @@ const BurgerButton = () => {
     }
 
     const handleClickLi = () => {
+        const hamburger = document.querySelector('.menu-btn__burger');
+        const nav = document.querySelector('.nav');
+        const menuNav = document.querySelector('.menu-nav');
+        const navItems = document.querySelectorAll('.menu-nav__item');
+
+
         hamburger.classList.remove('open');
         nav.classList.remove('open');
         menuNav.classList.remove('open');
