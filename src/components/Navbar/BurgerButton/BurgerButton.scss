@@ -1,0 +1,154 @@
+// LOGIC BURGER BUTTON
+.menu-btn {
+    position: relative;
+    padding: 0 20px;
+    z-index: 10;
+    left: 0rem;
+    top: 0rem;
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    // background: red;
+
+    //container button cross
+    &__burger {
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        width: 28px;
+        height: 4px;
+        background: var(--beige);
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+        transition: all 0.5s ease-in-out;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            width: 28px;
+            height: 4px;
+            background: var(--beige);
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease-in-out;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 7px;
+            width: 20px;
+            height: 4px;
+            background: var(--beige);
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease-in-out;
+        }
+
+        //Transicion al hacer click en el boton burguer
+        &.open {
+            transform: rotate(720deg);
+            background: transparent;
+            box-shadow: none; //Queremos que queden solo 2 barras las de after y before para que se haga la cruz
+            // position: fixed;
+
+            &::before {
+                transform: rotate(45deg) translate(5px, 8px);
+            }
+
+            &::after {
+                width: 28px;
+                transform: rotate(-45deg) translate(3px, -7px);
+            }
+        }
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    opacity: .95;
+    visibility: hidden;
+    z-index: 8;
+
+
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100vw;
+    //     background-color: $rose;
+    //     filter: blur(8px);
+    // }
+
+    &.open {
+        visibility: visible;
+        backdrop-filter: blur(20px);
+    }
+
+    .menu-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.8);
+        list-style-type: none;
+        padding-right: 1rem;
+        transform: translateY(-100%);
+        transition: all 0.5s ease-in-out;
+
+        &.open {
+            transform: translateY(0);
+        }
+
+        &__item {
+            transform: translateX(100vw);
+            transition: all .5s ease-in-out;
+            text-shadow: 0px 0px 7px rgba(237, 207, 167, .9);
+
+            &.open {
+                transform: translateX(0);
+
+            }
+
+            &.active>a {
+                color: var(--beige)
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            font-size: 2rem;
+            text-transform: uppercase;
+            padding: 2rem 0;
+            font-weight: 300;
+            color: gray;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                color: var(--beige);
+            }
+        }
+    }
+}
+
+@for $i from 1 through 4 {
+    .menu-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i * 0.1s) + 0.05s;
+
+    }
+}
+
+
+//media queries
+@media (min-width: 767px) {
+    .menu-btn {
+        display: none;
+    }
+
+
+}

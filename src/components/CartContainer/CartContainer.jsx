@@ -21,6 +21,7 @@ const CartContainer = () => {
 
     const handleFinishBuy = () => {
         emptyCart();
+
     }
     return (
         <>

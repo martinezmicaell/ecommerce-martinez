@@ -21,8 +21,7 @@
 
 
     &__list {
-    display: flex;
-    justify-content: space-around;
+    display: none;
     width: 33%;
     min-width: 270px;
     list-style: none;
@@ -62,4 +61,14 @@
     padding: .4em .8em;
     border-top-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+
+
+//media queries
+@media (min-width: 767px) {
+    .header__list {
+        display: flex;
+        justify-content: space-around;
+    }
+
 }

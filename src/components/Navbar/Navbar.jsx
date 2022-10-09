@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+
 //components
+import BurgerButton from './BurgerButton/BurgerButton'
 import CartWidget from './CartWidget/CartWidget'
+
 //styles
 import './Navbar.scss'
 
@@ -9,6 +12,9 @@ const Navbar = () => {
 
     return (
         <header className='header'>
+
+            <BurgerButton />
+
             <div>
                 <div className='logo' href='/'>
                     <Link to='/'><span className='logo__subrayado'>MARBIS</span></Link>
