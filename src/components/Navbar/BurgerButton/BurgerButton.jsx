@@ -47,8 +47,10 @@ const BurgerButton = () => {
 
   return (
     <>
-        <div className="menu-btn" onClick={handleBurgerButton}>
-            <span className="menu-btn__burger"></span>
+        <div className="container-burger" onClick={handleBurgerButton}>
+            <div className="menu-btn" >
+                <span className="menu-btn__burger"></span>
+            </div>
         </div>
 
         <nav className="nav">

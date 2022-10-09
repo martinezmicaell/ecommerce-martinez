@@ -1,14 +1,24 @@
 // LOGIC BURGER BUTTON
+.container-burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+}
+
 .menu-btn {
     position: relative;
-    padding: 0 20px;
     z-index: 10;
     left: 0rem;
     top: 0rem;
     height: 20px;
     width: 28px;
-    cursor: pointer;
+    // cursor: pointer;
     transition: all 0.5s ease;
+
 
     //container button cross
     &__burger {
@@ -85,8 +95,8 @@
 
     &.open {
         visibility: visible;
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, .9);
+        backdrop-filter:  blur(10px) opacity(.9);
     }
 
     .menu-nav {
@@ -96,6 +106,7 @@
         justify-content: center;
         height: 100vh;
         overflow: hidden;
+        background-color: inherit;
 
         list-style-type: none;
         padding-right: 1rem;
