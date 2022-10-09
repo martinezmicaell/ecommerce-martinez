@@ -9,7 +9,6 @@
     width: 28px;
     cursor: pointer;
     transition: all 0.5s ease;
-    // background: red;
 
     //container button cross
     &__burger {
@@ -86,9 +85,8 @@
 
     &.open {
         visibility: visible;
+        background-color: rgba(0, 0, 0, 0.8);
         backdrop-filter: blur(10px);
-        background: rgba(0, 0, 0, 0.8);
-         // This be the blur
     }
 
     .menu-nav {
@@ -98,8 +96,6 @@
         justify-content: center;
         height: 100vh;
         overflow: hidden;
-        background: rgba(0, 0, 0, 0.85);
-        backdrop-filter: blur(20px);
 
         list-style-type: none;
         padding-right: 1rem;
