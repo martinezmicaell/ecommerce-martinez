@@ -23,6 +23,24 @@ html {
     outline: none;
 }
 
+*::selection {
+    color: white;
+    background: var(--beige);
+}
+/* For Mozilla Firefox */
+::-moz-selection {
+    color: white;
+    background: var(--beige);
+}
+input,
+textarea,
+button,
+select,
+div,
+a {
+    outline: none;
+}
+
 body {
     background-color: rgba(222,222,222, .9);
     // height: 2000px;
