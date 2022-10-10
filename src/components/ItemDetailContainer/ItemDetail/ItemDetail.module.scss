@@ -88,7 +88,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 20px;
-        overflow-y: scroll;
+        // overflow-y: scroll;
 
     }
 
@@ -122,10 +122,19 @@
         padding: 20px 20px;
         line-height: 1.4em;
         overflow-y: auto;
-    }
+        /* Style the scrollbar handle */
+        scrollbar-color: var(--beige) rgba(66,66,66,.1);
 
-    .article__img {
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+            background-color: rgba(66,66,66,.1);
+          }
 
+        &::-webkit-scrollbar-thumb {
+            background: var(--beige);
+            border-radius: 5px;
+        }
     }
 
 }
