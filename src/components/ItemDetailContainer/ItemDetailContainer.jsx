@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 //mock API
-import { getSingleItem } from '../../services/mockAPI'
+// import { getSingleItem } from '../../services/mockAPI'
+import { getSingleItem } from '../../services/firestore'
 
 //components
 import ItemDetail from './ItemDetail/ItemDetail'

@@ -58,7 +58,7 @@ const ItemCount = ({price, stock, initial, onAddToCart}) => {
             </div>
 
             <span className='count__stockAvailable'>{`(${stock} unidades disponibles)`}</span>
-            <span className='count__price'>El precio por {count} {(count === 1) ? 'unidad' : 'unidades'} es de: ${price * count}</span>
+            <span className='count__price'>El precio por {count} {(count === 1) ? 'unidad' : 'unidades'} es de: {(price * count).toLocaleString('es-AR', {style: 'currency', currency: 'ARS'})}</span>
 
 
             <div>

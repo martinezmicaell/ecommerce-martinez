@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 
 import { getAnalytics } from "firebase/analytics";
 
-import { getFirestore, collection, getDocs } from "firebase/firestore"
+import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "firebase/firestore"
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -31,6 +31,37 @@ const firestore = getFirestore(app)
 
 const analytics = getAnalytics(app);
 
-export default app;
+// export default app;
 export { firestore, analytics };
 
+
+export const getItems = async () => {
+    const collectionRef = collection(firestore, "ropa")
+    let snapshotDB = await getDocs(collectionRef)
+
+    let dataDocs = snapshotDB.docs.map(doc => {
+        let formatDoc = { ...doc.data(), id: doc.id };
+        return formatDoc;
+    });
+    return dataDocs;
+}
+
+
+export const getSingleItem = async (idParams) => {
+    const docRef = doc(firestore, "ropa", idParams)
+    const docSnapshot = await getDoc(docRef)
+    return { ...docSnapshot.data(), id: docSnapshot.id }
+}
+
+export const getItemsByCategory = async (categoryParams) => {
+    const collectionRef = collection(firestore, "ropa");
+    const queryCategory = query(collectionRef, where("category", "==", categoryParams))
+
+    const response = await getDocs(queryCategory);
+
+    let dataDocs = response.docs.map(doc => {
+        let formatDoc = { ...doc.data(), id: doc.id };
+        return formatDoc;
+    });
+    return dataDocs;
+}

@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 
 //components
 import CardList from './CardList/CardList';
-import {getItems, getItemsByCategory} from '../../services/mockAPI';
+// import {getItems, getItemsByCategory} from '../../services/mockAPI';
+import {getItems, getItemsByCategory} from '../../services/firestore';
 import Spinner from '../Spinner/Spinner';
 
 //styles
@@ -21,9 +22,10 @@ const ItemListContainer = ({greetings}) => {
         console.log(categoryId)
         setIsLoading(true)
         if(categoryId === undefined) {
-            getItems
+            // console.log(getItems())
+            getItems()
                 .then((response) => {
-                    console.log('Trayendo Datos');
+                    console.log('Trayendo Datos Firebase:', response);
                     setItems(response)
                     console.log(response)
 
@@ -36,9 +38,9 @@ const ItemListContainer = ({greetings}) => {
         } else {
             getItemsByCategory(categoryId).then(response => {
                 setItems(response)
-                setIsLoading(false);
-
             })
+            .catch(err => console.log(err))
+            .finally(() => setIsLoading(false))
         }
 
     }, [categoryId])

@@ -8,7 +8,9 @@
 .count__price {
     margin-top: 20px;
     color: var(--beige);
-
+    font-family: 'Courier';
+    letter-spacing: -1px;
+    font-weight: 700;
 }
 .count__container {
     margin: 10px auto;
@@ -47,6 +49,9 @@
     color: var(--beige);
     font-style: italic;
     font-size: .85em;
+    // font-family: 'Courier';
+    letter-spacing: .5px;
+    font-weight: 700;
 }
 
 .button__addToCart {

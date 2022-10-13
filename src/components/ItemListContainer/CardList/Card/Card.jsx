@@ -16,9 +16,9 @@ const Card = (props) => {
                 </figure>
 
                 <div className="article__description">
-                    <h2 className='article__title'>{title}</h2>
+                    <h2 className='article__title'>{title.length > 20 ? `${title.substring(0,20)}...` : title}</h2>
                     {/* <p>{detail}</p> */}
-                    <p className='article__price'>${price}</p>
+                    <p className='article__price'>{price.toLocaleString('es-AR', {style: "currency", currency: "ARS"})}</p>
                 </div>
 
                 <ButtonShowMore id={id}></ButtonShowMore>
