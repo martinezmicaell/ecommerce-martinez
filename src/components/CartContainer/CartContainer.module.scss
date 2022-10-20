@@ -40,6 +40,7 @@
         gap: 40px;
         // font-size: 18px;
         font-family: "Courier";
+        margin-bottom: 20px;
 
 
 
@@ -61,7 +62,10 @@
     margin-bottom: 10px;
 
     &__container {
+        margin-top: 0px;
         display: flex;
+        justify-content: center;
+        align-items: center;
         align-items: flex-end;
     }
 }
@@ -123,26 +127,5 @@
     .link__finishBuy {
         font-size: 1em;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-@keyframes transitionBackground {
-    0% {
-
-    }
-    100% {
-        background-color: rgba(33,33,33, .9);
-        color: var(--beige);
-    }
-
 }
 

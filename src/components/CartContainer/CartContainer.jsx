@@ -2,6 +2,9 @@ import React, {useContext, useState} from 'react'
 import { CartContext } from '../../context/CartContext'
 import CartItem from './CartItem/CartItem';
 import { Link } from 'react-router-dom';
+import { createBuyOrder, getItems } from '../../services/firestore';
+import CheckoutForm from '../CheckoutForm/CheckoutForm';
+
 
 //styles
 import styles from './CartContainer.module.scss'
@@ -16,16 +19,11 @@ const VoidCart = () => {
 }
 
 const CartContainer = () => {
-    const { cart, getItemPrice, emptyCart } = useContext(CartContext);
+    const { cart, getItemPrice } = useContext(CartContext);
+    const totalPrice = getItemPrice().toLocaleString('es-AR', {style: "currency", currency: "ARS"});
 
-
-    const handleFinishBuy = () => {
-        emptyCart();
-
-    }
     return (
         <>
-            {console.log(cart)}
             {cart[0] === undefined ? (<VoidCart />) : (
             <>
                 <section className={styles.cart__section} >
@@ -35,19 +33,23 @@ const CartContainer = () => {
                     ))}
                 </section>
 
-                <div className={styles.cart__calculation}>
                     <div className={styles.goToBuy__container}>
                         <Link to="/" className={styles.goToBuy}>SEGUIR COMPRANDO</Link>
                     </div>
+                <div className={styles.cart__calculation}>
 
                     <div className={styles.cart__totals}>
                         <div className={styles.cart__total}>
                             <span>TOTAL DE LA COMPRA:</span>
-                            <span className={styles.cart__totalNumber}>{getItemPrice().toLocaleString('es-AR', {style: "currency", currency: "ARS"})}</span>
+                            <span className={styles.cart__totalNumber}>{totalPrice}</span>
                         </div>
-                        <Link to="/" className={styles.link__finishBuy} onClick={handleFinishBuy}>FINALIZAR COMPRA</Link>
+
+                        {/* Export to other component with route checkout/:orderId */}
+                        <CheckoutForm />
+                        {/* Export to other component */}
                     </div>
                 </div>
+
             </>
             )}
         </>
