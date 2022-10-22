@@ -29,7 +29,7 @@ function App() {
                     <Navbar />
                     <ToastContainer limit={4} style={{}} />
 
-                    {/* <button onClick={exportDataToFirestore}>Rellenar data</button> */}
+                    <button onClick={exportDataToFirestore}>Rellenar data</button>
 
                     <Routes>
                         <Route path="/" element={<ItemListContainer greetings="Bienvenidos a mi Tienda online!" />} />

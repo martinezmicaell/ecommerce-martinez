@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 
 import { getAnalytics } from "firebase/analytics";
 
-import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc, setDoc } from "firebase/firestore"
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc } from "firebase/firestore"
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -15,13 +15,13 @@ import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc, s
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD_8oWxoiW0xKN2W0nfDYq0PqP9gLuqBLY",
-    authDomain: "ecommerce-marbis.firebaseapp.com",
-    projectId: "ecommerce-marbis",
-    storageBucket: "ecommerce-marbis.appspot.com",
-    messagingSenderId: "164229192405",
-    appId: "1:164229192405:web:de41e6cf7ef1f634e6a05c",
-    measurementId: "G-0R3NRXRVPM"
+    apiKey: process.env.REACT_APP_FIREBASE_apiKey,
+    authDomain: process.env.REACT_APP_FIREBASE_authDomain,
+    projectId:process.env.REACT_APP_FIREBASE_projectId,
+    storageBucket: process.env.REACT_APP_FIREBASE_storageBucket,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_messagingSenderId,
+    appId: process.env.REACT_APP_FIREBASE_appId,
+    measurementId: process.env.REACT_APP_FIREBASE_measurementId
 };
 
 
