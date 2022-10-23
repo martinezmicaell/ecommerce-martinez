@@ -32,16 +32,6 @@ const ItemCount = ({price, stock, initial, onAddToCart}) => {
         progress: undefined,
     })
 
-
-    // const onAddToCart = () => {
-    //     notify();
-    //     console.log('cart 1')
-    // }
-
-    // const handleCart = () => {
-    //     console.log('hello world')
-    // }
-
     if(stock === 0) {
         const buttons = [...document.getElementsByTagName('button')];
         console.log(buttons)

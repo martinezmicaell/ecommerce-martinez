@@ -14,26 +14,19 @@ const ItemListContainer = ({greetings}) => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    // console.log(useParams())
     const { categoryId } = useParams();
-    console.log(categoryId)
 
     useEffect(() => {
-        console.log(categoryId)
         setIsLoading(true)
         if(categoryId === undefined) {
-            // console.log(getItems())
             getItems()
                 .then((response) => {
-                    console.log('Trayendo Datos Firebase:', response);
                     setItems(response)
-                    console.log(response)
 
                 })
                 .catch(err => console.log(`${err}` ))
                 .finally(() => {
                     setIsLoading(false);
-                    console.log('Request finalized')
                 })
         } else {
             getItemsByCategory(categoryId).then(response => {
