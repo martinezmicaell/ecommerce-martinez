@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { getOrderId } from '../../services/firestore';
+import CheckoutDetail from '../CheckoutDetail/CheckoutDetail';
 import Spinner from '../Spinner/Spinner';
 
 //css
@@ -15,7 +16,9 @@ const Checkout = () => {
         getOrderId(orderId).then(dataSingleOrder => {
             setDataOrder(dataSingleOrder)
         })
+
         .finally(() => setIsLoading(false))
+
     }, [orderId])
 
 
@@ -25,10 +28,25 @@ const Checkout = () => {
         <>
             {dataOrder.hasOwnProperty('err') ? <p>{dataOrder.err}</p> :
                 <section className={styles.checkout__section}>
-                    <h1  className={styles.checkout__title}>Tu pago se acreditó correctamente! 🥳</h1>
-                    <p className={styles.checkout__orderId}>El ID de tu compra es: {orderId}</p>
-                    <h3 className={styles.checkout__numberFollow}>Pronto te enviaremos el número de seguimiento de tu envío</h3>
-                    <p>¡Gracias por elegirnos!</p>
+                    <div className={styles.checkout__successAd}>
+                        <h1  className={styles.checkout__title}>Tu pago se acreditó correctamente! 🥳</h1>
+                        <p className={styles.checkout__orderId}>El ID de tu compra es: {orderId}</p>
+                        <h3 className={styles.checkout__numberFollow}>Pronto te enviaremos el número de seguimiento de tu envío por mail!</h3>
+                        <p>¡Gracias por elegirnos!</p>
+                    </div>
+
+                    {/* console.log(docSnap.data().items[0].detail + 'DATA ORDER EXAMPLE') */}
+                    <h2>Lo que compraste:</h2>
+                    <ul className={styles.checkoutDetail__container}>
+                        {dataOrder.items.map(itemSeller => {
+                            return(
+                                <li className={styles.checkoutDetail__list}>
+                                    <CheckoutDetail key={itemSeller.id} itemSeller={itemSeller} />
+                                </li>
+                            )
+                        })}
+                    </ul>
+                    <h2 className={styles.checkoutDetail__totalPrice}>Lo que pagaste en total: &nbsp;&nbsp;<span className={styles.checkoutDetail__price}>{dataOrder.total.toLocaleString('es-AR', { style: 'currency', currency: 'ARS'})}</span></h2>
                 </section>
             }
         </>}

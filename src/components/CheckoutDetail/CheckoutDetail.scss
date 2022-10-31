@@ -1,0 +1,16 @@
+.checkoutDetail {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Courier';
+
+    }
+    &__title {
+        margin-bottom: 10px;
+    }
+    &__priceUnit {
+        margin-top: 10px;
+    }
+}

@@ -18,9 +18,11 @@ const ItemDetail = ({data, data: {id, title, price, detail, img, stock}}) => {
 
     const handleAddToCart = (count) => {
         Swal.fire({
+            heightAuto: false,
+            width: 400,
             title: "Item añadido al carrito!",
             text: 'Ve al carrito para terminar tu compra o sigue comprando',
-            icon: 'success'
+            icon: 'success',
         })
         addItem(data, count)
         //     addItem(detalle, count)

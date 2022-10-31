@@ -18,18 +18,16 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 //Firebase
-import { firestore, analytics, exportDataToFirestore } from './services/firestore';
+import { firestore, analytics } from './services/firestore';
 
 function App() {
     return (
         <div className="App">
-            {console.log(firestore)}
             <BrowserRouter>
                 <MyProvider>
                     <Navbar />
                     <ToastContainer limit={4} style={{}} />
 
-                    <button onClick={exportDataToFirestore}>Rellenar data</button>
 
                     <Routes>
                         <Route path="/" element={<ItemListContainer greetings="Bienvenidos a mi Tienda online!" />} />

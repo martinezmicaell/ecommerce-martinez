@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import { createBuyOrder } from '../../services/firestore'
-import Checkout from '../Checkout/Checkout'
+// import Checkout from '../Checkout/Checkout'
 //css
 import styles from './CheckoutForm.module.scss'
 
@@ -36,10 +36,11 @@ const CheckoutForm = () => {
             total: getItemPrice(),
         }
 
-        //pay method, if is true =>
+        //pay method, if is true => retornara un orderId
         createBuyOrder(orderData).then(orderId => {
             navigate(`/checkout/${orderId}`)
             emptyCart()
+
                 //Este es tu id y tu compra, gracias por tu compra, te esperamos de nuevo!
         })
     }
@@ -58,7 +59,7 @@ const CheckoutForm = () => {
             </div>
 
             <div className={styles.form__item}>
-                <input onChange={handleChangeInput} className={styles.form__input} type="text" name="mail" placeholder="Mail" value={dataForm.mail}required/>
+                <input onChange={handleChangeInput} className={styles.form__input} type="text" name="mail" placeholder="Mail" value={dataForm.mail} pattern="^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$" required/>
             </div>
 
             <div className={styles.form__item}>

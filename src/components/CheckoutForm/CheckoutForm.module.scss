@@ -59,12 +59,17 @@
     padding: 15px;
     border-radius: 5px;
     font-size: .9em;
+    cursor: pointer;
     color: rgba(33,33,33, .7);
 
     &:hover {
 
         animation: transitionBackground .7s forwards;
     }
+}
+
+.swal2-container {
+    height: 300px;
 }
 
 
