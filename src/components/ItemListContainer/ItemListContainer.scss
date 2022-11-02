@@ -43,6 +43,18 @@
     box-shadow: 5px 0 50px rgba(237, 207, 167, .9);
     }
 
+    &__titleLogo {
+        font-family: 'Dancing';
+        letter-spacing: 0.2em;
+        font-size: 3em;
+        transform: rotate(-1deg);
+        color: rgba(237, 207, 167, .7);
+        border-bottom: 2px solid rgba(237, 207, 167, .6);
+        margin-top: -25px;
+        margin-bottom: 10px;
+        // display: none;
+    }
+
     &__titleCategory {
         display: block;
         width: 100%;
@@ -59,7 +71,7 @@
 
 
 
-//logo
+
 .logo-marbis {
     background-color: rgb(237, 207, 167);
     padding: 10px 15px;
@@ -84,6 +96,10 @@
 @media (min-width: 767px) {
     .section__titleCategory {
         font-size: 1.8rem;
+    }
+
+    .section__titleLogo {
+        display: block;
     }
 }
 @media (min-width: 1024px) {

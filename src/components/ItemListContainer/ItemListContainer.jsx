@@ -50,11 +50,13 @@ const ItemListContainer = ({greetings}) => {
                         </>
                         :
                         <>
-                           <div>
+                           {/* <div className='container__logo-marbis'>
                                 <div className='logo-marbis' href='/'>
                                     <span className='logo-marbis__subrayado'>MARBIS</span>
                                 </div>
-                            </div>
+                            </div> */}
+
+                            <h1 className='section__titleLogo'>MARBIS</h1>
 
                             <h1 className='section__titleCategory'>El Catálogo seleccionado exclusivo para vos!</h1>
                             <CardList items={items} />
