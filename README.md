@@ -14,7 +14,6 @@
 
   ### De que se trata
   Catálogo exclusivo de una tienda de ropa online llamada MARBIS.
-  Encontraras cualquier estilo, tipo y sabor en nuestra casa, solo una cosa no varia y es la calidad.
   Se dió un aspecto Premium al diseño que va a acorde a la calidad del catálogo vendido.
 
   ### Deploy URL:  https://marbis-ecommerce.vercel.app/
