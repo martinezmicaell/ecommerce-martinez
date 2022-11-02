@@ -8,7 +8,6 @@
   ### Tech
   - HTML
   - CSS / SCSS / Modules SCSS
-  - Framer Motion
   - JavaScript
   - React.js
   - Firebase

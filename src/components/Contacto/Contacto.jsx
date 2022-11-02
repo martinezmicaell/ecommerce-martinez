@@ -7,7 +7,7 @@ import { SocialIcon } from 'react-social-icons'
 const Contacto = () => {
   return (
     <section>
-        <h2 className='contacto__title'>Necesitas atención personalizada?</h2>
+        <h2 className='contacto__title'>Necesitás atención personalizada?</h2>
         <h4 className='contacto__subtitle'>Comunícate con Nosotros!</h4>
 
         <ul className='contacto__ul'>
