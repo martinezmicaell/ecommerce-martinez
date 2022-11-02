@@ -59,6 +59,25 @@
     }
 }
 
+.link__finishBuy{
+    margin-top: 1.5em;
+    // background-color: black;
+    border: 2px solid rgba(33,33,33, .7);
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: .9em;
+    cursor: pointer;
+    color: rgba(33,33,33, .7);
+    margin-bottom: 30px;
+
+    &:hover {
+        animation: transitionBackground .7s forwards;
+    }
+}
+
 
 //Media queries
 @media (min-width: 767px) {
@@ -70,3 +89,19 @@
         }
     }
 }
+
+//Animations
+@keyframes transitionBackground {
+    0% {
+
+    }
+    100% {
+        background-color: rgba(33,33,33, .9);
+        color: var(--beige);
+    }
+
+}
+
+
+
+

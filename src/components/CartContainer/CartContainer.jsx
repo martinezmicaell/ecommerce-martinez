@@ -1,8 +1,7 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import { CartContext } from '../../context/CartContext'
 import CartItem from './CartItem/CartItem';
 import { Link } from 'react-router-dom';
-import { createBuyOrder, getItems } from '../../services/firestore';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
 

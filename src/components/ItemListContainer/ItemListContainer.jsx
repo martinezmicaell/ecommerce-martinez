@@ -13,7 +13,6 @@ import './ItemListContainer.scss'
 const ItemListContainer = ({greetings}) => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
     const { categoryId } = useParams();
 
     useEffect(() => {
@@ -41,10 +40,29 @@ const ItemListContainer = ({greetings}) => {
   return (
     <main className='main'>
 
-        <h1 className='main__title'>{greetings}</h1>
-
         <section className='section__container'>
-            {isLoading ? <Spinner /> : <CardList items={items} />}
+            {isLoading ? <Spinner /> :
+                <>
+                    {categoryId !== undefined ?
+                        <>
+                            <h2 className='section__titleCategory'>Nuestro catálogo de {categoryId}</h2>
+                            <CardList items={items} />
+                        </>
+                        :
+                        <>
+                           <div>
+                                <div className='logo-marbis' href='/'>
+                                    <span className='logo-marbis__subrayado'>MARBIS</span>
+                                </div>
+                            </div>
+
+                            <h1 className='section__titleCategory'>El Catálogo seleccionado exclusivo para vos!</h1>
+                            <CardList items={items} />
+                        </>
+                    }
+
+                </>
+            }
 
         </section>
     </main>

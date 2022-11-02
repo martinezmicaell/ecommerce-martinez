@@ -2,9 +2,6 @@ import React,{useState} from 'react'
 
 //styles
 import './ItemCount.scss';
-//packages
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const ItemCount = ({price, stock, initial, onAddToCart}) => {
     const [count, setCount] = useState(initial);
@@ -22,16 +19,6 @@ const ItemCount = ({price, stock, initial, onAddToCart}) => {
         }
     }
 
-    const notify = () => toast.success("Wow so easy!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-    })
-
     if(stock === 0) {
         const buttons = [...document.getElementsByTagName('button')];
         console.log(buttons)
@@ -48,7 +35,7 @@ const ItemCount = ({price, stock, initial, onAddToCart}) => {
             </div>
 
             <span className='count__stockAvailable'>{`(${stock} unidades disponibles)`}</span>
-            <span className='count__price'>El precio por {count} {(count === 1) ? 'unidad' : 'unidades'} es de: {(price * count).toLocaleString('es-AR', {style: 'currency', currency: 'ARS'})}</span>
+            <span className='count__price'>El precio por {count} {(count === 1) ? 'unidad' : 'unidades'} es de: <span className='count__priceNumber'>{(price * count).toLocaleString('es-AR', {style: 'currency', currency: 'ARS'})}</span></span>
 
 
             <div>

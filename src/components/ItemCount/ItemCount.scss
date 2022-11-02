@@ -8,9 +8,14 @@
 .count__price {
     margin-top: 20px;
     color: var(--beige);
-    font-family: 'Courier';
-    letter-spacing: -1px;
+    // font-family: 'Courier';
+    letter-spacing: .5px;
     font-weight: 700;
+    &Number {
+        // font-family: 'Courier';
+        letter-spacing: 1px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
 }
 .count__container {
     margin: 10px auto;

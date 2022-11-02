@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { getOrderId } from '../../services/firestore';
 import CheckoutDetail from '../CheckoutDetail/CheckoutDetail';
 import Spinner from '../Spinner/Spinner';
@@ -40,13 +40,15 @@ const Checkout = () => {
                     <ul className={styles.checkoutDetail__container}>
                         {dataOrder.items.map(itemSeller => {
                             return(
-                                <li className={styles.checkoutDetail__list}>
+                                <li key={itemSeller.id} id={itemSeller.id} className={styles.checkoutDetail__list}>
                                     <CheckoutDetail key={itemSeller.id} itemSeller={itemSeller} />
                                 </li>
                             )
                         })}
                     </ul>
                     <h2 className={styles.checkoutDetail__totalPrice}>Lo que pagaste en total: &nbsp;&nbsp;<span className={styles.checkoutDetail__price}>{dataOrder.total.toLocaleString('es-AR', { style: 'currency', currency: 'ARS'})}</span></h2>
+
+                    <Link to="/" className={styles.link__finishBuy}>Volver al Inicio</Link>
                 </section>
             }
         </>}

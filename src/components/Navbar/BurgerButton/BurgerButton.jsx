@@ -72,7 +72,7 @@ const BurgerButton = () => {
                 </li>
                 <li className="menu-nav__item">
                     <Link to="/contacto" className="menu-nav__link" onClick={handleClickLi}>
-                        ¿Quienes somos?
+                        Contacto
                     </Link>
                 </li>
             </ul>

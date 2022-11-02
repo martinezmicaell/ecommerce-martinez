@@ -7,12 +7,12 @@ import ButtonShowMore from '../../../ButtonShowMore/ButtonShowMore';
 import './Card.scss'
 
 const Card = (props) => {
-    const {id, price, title, img, stock, detail, initial} = props
+    const {id, price, title, img, detail} = props
     return (
         <article key={id} className='section__article'>
             <div className='article__wrapper'>
                 <figure>
-                    <img className="article__img" src={img} alt="" />
+                    <img className="article__img" src={img} alt={detail} />
                 </figure>
 
                 <div className="article__description">

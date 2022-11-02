@@ -3,7 +3,7 @@ import React from 'react'
 import './CheckoutDetail.scss';
 
 const CheckoutDetail = ({itemSeller}) => {
-    const { category, detail, img, title, price, quantity } = itemSeller
+    const {detail, img, title, price, quantity } = itemSeller
   return (
     <div className='checkoutDetail__wrapper'>
         <h4 className="checkoutDetail__title">{title}</h4>
